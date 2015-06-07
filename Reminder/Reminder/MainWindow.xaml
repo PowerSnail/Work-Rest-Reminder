@@ -6,36 +6,31 @@
     <DockPanel Grid.ColumnSpan="2" Margin="0,0,-0.333,0" LastChildFill="True">
         <Menu Height="20" DockPanel.Dock="Top">
             <MenuItem Header="Events">
-                <MenuItem x:Name="menuItemNewEvent" Header="New Event" HorizontalAlignment="Left" Click="btnNewEvent_Click"/>
-                <MenuItem x:Name="menuItemOpenEventList" Header="Open Event List" Click="btnOpenEventList_Click"></MenuItem>
-                <Separator></Separator>
-                <MenuItem x:Name="menuItemNewCategory" Header="New Category" Click="btnNewCat_Click"></MenuItem>
-                <MenuItem x:Name="menuItemOpenCatList" Header="Open Category List" Click="menuItemOpenCatList_Click"></MenuItem>
+                <MenuItem x:Name="menuItemNewEvent" Header="New Event" HorizontalAlignment="Stretch" Click="btnNewEvent_Click"/>
+                <MenuItem x:Name="menuItemEditEvent" Header="Edit" HorizontalAlignment="Stretch" Click="btnEditEvent_Click"/>
+                <Separator/>
+                <MenuItem x:Name="menuItemStart" Header="Start" HorizontalAlignment="Stretch" Click="btnStart_Click"/>
+                <MenuItem x:Name="menuItemPause" Header="Pause" HorizontalAlignment="Stretch" Click="btnPause_Click"/>
+                <MenuItem x:Name="menuItemNextEvent" Header="Next Event" HorizontalAlignment="Stretch" Click="btnNext_Click"/>
                 <Separator/>
                 <MenuItem x:Name="menuItemExit" Header="Exit" Click="menuItemExit_Click"></MenuItem>
             </MenuItem>
-            <MenuItem Header="Edit">
-                <MenuItem x:Name="menuItemEditAdd" Header="Add..."></MenuItem>
-                <MenuItem x:Name="menuItemEditEdit" Header="Edit..."></MenuItem>
-                <MenuItem x:Name="menuItemEditRemove" Header="Remove"></MenuItem>
+            <MenuItem Header="Category">
+                <MenuItem x:Name="menuItemNewCategory" Header="New Category" Click="btnNewCat_Click"></MenuItem>
+                <MenuItem x:Name="menuItemOpenCatList" Header="Open Category List" Click="menuItemOpenCatList_Click"></MenuItem>
             </MenuItem>
             <MenuItem Header="Help">
                 <MenuItem x:Name="menuItemDebug" Header="Debug" HorizontalAlignment="Left" Width="139.333333333333" Click="menuItemDebug_Click"/>
             </MenuItem>
         </Menu>
-        <StackPanel x:Name="spEventsList" DockPanel.Dock="Right" Width="0">
-            <TextBlock x:Name="tbTitleEventList" Text="Event List" Margin="10"></TextBlock>
-            <ListBox x:Name="lbEventList" Margin="20,10,10,10"></ListBox>
-        </StackPanel>
-        <StackPanel x:Name="spCategoryList" DockPanel.Dock="Right" Width="0">
-            <TextBlock x:Name="tbTitleCatList" Text="Category List" Margin="10"></TextBlock>
-            <ListBox x:Name="lbCategoryList" Margin="20,10,10,10"></ListBox>
-        </StackPanel>
+        <WrapPanel x:Name="wpStatus" VerticalAlignment="Bottom" DockPanel.Dock="Bottom" Height="40" Margin="0,0,0.333,0" Background="#FFF1F1F1">
+            <TextBlock x:Name ="tbStatus" Text="TextBlock" Height="20" Margin="10" MouseUp="tbStatus_MouseUp" ScrollViewer.HorizontalScrollBarVisibility="Auto" />
+        </WrapPanel>
         <StackPanel x:Name="spEditEvent" HorizontalAlignment="Left" DockPanel.Dock="Right" Width="0" KeyDown="spEditEvent_KeyDown">
             <TextBox x:Name="tbName" HorizontalAlignment="Left" Height="23" Margin="10,10,10,10" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="new event"/>
             <ComboBox x:Name="cbCategory" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Top" Width="120" Height="22" Loaded="cbCategory_Loaded"/>
             <TextBox x:Name="tbMinute" HorizontalAlignment="Left" Height="23" Margin="10,10,10,10" TextWrapping="Wrap" Text="25" VerticalAlignment="Top" Width="120"/>
-            <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="10,10,10,10" Height="21" Click="btnAdd_Click"/>
+            <Button x:Name="btnAdd" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="10,10,10,10" Height="21" Click="btnAdd_Click"/>
         </StackPanel>
         <StackPanel x:Name="spCategorySet" DockPanel.Dock="Right" Width="0">
 
@@ -45,21 +40,26 @@
             <Button x:Name="btnEditCatCancle" Margin="10" Content="Cancel" Click="btnEditCatCancle_Click"></Button>
             <Button x:Name="btnRemoveCat" Margin="10" Content="Remove" Click="btnRemoveCat_Click"></Button>
         </StackPanel>
-        <WrapPanel x:Name="wpGetName" VerticalAlignment="Bottom" DockPanel.Dock="Bottom" Height="40" Margin="0,0,0.333,0"/>
         <DockPanel x:Name="dp2" Grid.Column="2" Margin="0,0,0,0">
+            <StackPanel x:Name="spCategoryList" DockPanel.Dock="Right" Width="200">
+                <TextBlock x:Name="tbTitleCatList" Text="Category List" Margin="10"></TextBlock>
+                <ListBox x:Name="lbCategoryList" Margin="20,10,10,10"></ListBox>
+            </StackPanel>
             <WrapPanel Height="40" DockPanel.Dock="Bottom">
                 <Button x:Name="btnAddSW" Content="Work for 25 minutes" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="200" Height="20" Click="btnAddSW_Click" Margin="10,10,5,10"/>
                 <Button x:Name="btnAddSR" Content="Rest for 05 minutes" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="200" Height="20" Click="btnAddSR_Click" Margin="10,10,5,10"/>
             </WrapPanel>
             <WrapPanel Height="40" DockPanel.Dock="Top">
-                <Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="20" Click="btnStart_Click" Margin="10" IsEnabled="False"/>
-                <Button x:Name="btnPause" Content="Pause" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="20" Click="btnPause_Click" Margin="10"/>
-                <Button x:Name="btnNext" Content="Next" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="20" Click="btnNext_Click" Margin="10"/>
-                <Button x:Name="btnStats" Content="Get Stats" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="20" Margin="10"/>
-                <Button x:Name="btnNewEvent" Content="New" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Height="20" Margin="10" Click="btnNewEvent_Click"/>
-                <Button x:Name="btnOpenEventList" Content="->" Width="20" Height="20" Margin="10" Click="btnOpenEventList_Click"></Button>
+                <Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" Width="80" Click="btnStart_Click" Margin="10,0,0,0" Height="40" BorderBrush="{x:Null}" Background="White" />
+                <Button x:Name="btnPause" Content="Pause" HorizontalAlignment="Left" Width="80" Click="btnPause_Click" Margin="10,0,0,0" Height="40" BorderBrush="{x:Null}" Background="White"/>
+                <Button x:Name="btnNext" Content="Next" HorizontalAlignment="Left" Width="80" Click="btnNext_Click" Margin="10,0,0,0" Height="40" BorderBrush="{x:Null}" Background="White"/>
+                <Button x:Name="btnStats" Content="Get Stats" HorizontalAlignment="Left" Width="80" Margin="10,0,0,0" Height="40" BorderBrush="{x:Null}" Background="White"/>
+                <Button x:Name="btnNewEvent" Content="New" HorizontalAlignment="Left" Width="80" Click="btnNewEvent_Click" Margin="10,0,0,0" Height="40" BorderBrush="{x:Null}" Background="White"/>
             </WrapPanel>
-            <TextBlock x:Name ="tbStatus" TextWrapping="Wrap" Text="TextBlock" Margin="10" MouseUp="tbStatus_MouseUp" ScrollViewer.HorizontalScrollBarVisibility="Auto" />
+            <StackPanel x:Name="spEventsList">
+                <ListBox x:Name="lbEventList" Margin="20,10,10,10"></ListBox>
+            </StackPanel>
+
 
         </DockPanel>
     </DockPanel>

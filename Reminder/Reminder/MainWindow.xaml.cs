@@ -51,7 +51,8 @@ namespace Reminder
 
             int n = events.Count();
             events.Add(e);
-            lbEventList.Items.Add(e);
+
+            lbEventList.Items.Add(e.ToString());
             printWLog("New Event Added: " + e.ToString());
             btnStart.IsEnabled = true;
 
@@ -85,6 +86,7 @@ namespace Reminder
                 events[edEve].renew(tbName.Text,
                                     int.Parse(tbMinute.Text) * 60,
                                     categories[cbCategory.SelectedIndex]);
+                lbEventList.Items[edEve] = events[edEve].ToString();
             }
         }
 
@@ -253,6 +255,7 @@ namespace Reminder
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             saveEvent();
+            exitSpEditEvent();
         }
 
         private void spEditEvent_KeyDown(object sender, KeyEventArgs e)
@@ -381,6 +384,11 @@ namespace Reminder
         {
             printWLog("Shutting down at " + DateTime.Now.ToString());
             Application.Current.Shutdown();
+        }
+
+        private void btnEditEvent_Click(object sender, RoutedEventArgs e)
+        {
+            editEvent(lbEventList.SelectedIndex);
         }
 
         // =====================</UI Invoked>=====================

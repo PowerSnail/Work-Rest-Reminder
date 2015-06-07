@@ -18,3 +18,17 @@ C:\Users\PSnail\OneDrive\C#\Reminder\Reminder\obj\Debug\AlarmWindow.g.cs
 C:\Users\PSnail\OneDrive\Projects\Work-Rest-Reminder\Reminder\Reminder\bin\Debug\Reminder.exe.config
 C:\Users\PSnail\OneDrive\Projects\Work-Rest-Reminder\Reminder\Reminder\obj\Debug\Reminder.exe
 C:\Users\PSnail\OneDrive\Projects\Work-Rest-Reminder\Reminder\Reminder\obj\Debug\Reminder.pdb
+C:\Users\PSnail\OneDrive\Projects\Work-Rest-Reminder\Reminder\Reminder\bin\Debug\Reminder.exe
+C:\Users\PSnail\OneDrive\Projects\Work-Rest-Reminder\Reminder\Reminder\bin\Debug\Reminder.pdb
+C:\Users\PSnail\OneDrive\Projects\Work-Rest-Reminder\Reminder\Reminder\obj\Debug\Reminder.csprojResolveAssemblyReference.cache
+C:\Users\PSnail\OneDrive\Projects\Work-Rest-Reminder\Reminder\Reminder\obj\Debug\AlarmWindow.baml
+C:\Users\PSnail\OneDrive\Projects\Work-Rest-Reminder\Reminder\Reminder\obj\Debug\MainWindow.baml
+C:\Users\PSnail\OneDrive\Projects\Work-Rest-Reminder\Reminder\Reminder\obj\Debug\standardWorkName.baml
+C:\Users\PSnail\OneDrive\Projects\Work-Rest-Reminder\Reminder\Reminder\obj\Debug\AlarmWindow.g.cs
+C:\Users\PSnail\OneDrive\Projects\Work-Rest-Reminder\Reminder\Reminder\obj\Debug\MainWindow.g.cs
+C:\Users\PSnail\OneDrive\Projects\Work-Rest-Reminder\Reminder\Reminder\obj\Debug\standardWorkName.g.cs
+C:\Users\PSnail\OneDrive\Projects\Work-Rest-Reminder\Reminder\Reminder\obj\Debug\App.g.cs
+C:\Users\PSnail\OneDrive\Projects\Work-Rest-Reminder\Reminder\Reminder\obj\Debug\Reminder_MarkupCompile.cache
+C:\Users\PSnail\OneDrive\Projects\Work-Rest-Reminder\Reminder\Reminder\obj\Debug\Reminder.g.resources
+C:\Users\PSnail\OneDrive\Projects\Work-Rest-Reminder\Reminder\Reminder\obj\Debug\Reminder.Properties.Resources.resources
+C:\Users\PSnail\OneDrive\Projects\Work-Rest-Reminder\Reminder\Reminder\obj\Debug\Reminder.csproj.GenerateResource.Cache
